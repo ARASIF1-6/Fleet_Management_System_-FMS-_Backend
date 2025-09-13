@@ -1,18 +1,26 @@
 # Fleet Management System (FMS) 🚕
 
-A comprehensive fleet management solution built with Node.js and PostgreSQL, designed to streamline taxi operations and driver management.
+A comprehensive and robust fleet management solution backend api built with Node.js and PostgreSQL, designed to streamline car operations, upload driver documents, driver management, daily vehicle checks, subscriptions (monthly, annual) and free trial (for 7 days) for accessing the application.
 
 ## 🌟 Key Features
 
+### Authentication & Authorization
+- JWT-based authentication
+- Role-based access control (User/Admin)
+- Email verification system
+- Password reset functionality
+  
 ### Document Management
-- Digital storage for driver documents
-- Automatic expiry notifications
-- Document verification system
+- Upload and store driver documents
+- Document expiry tracking
+- Automated email reminders for expiring documents
+- Document type management
 
-### Vehicle Monitoring
-- Daily vehicle inspection checklists
-- Maintenance tracking
-- Historical inspection records
+### Daily Vehicle Checks
+- Comprehensive vehicle inspection checklist
+- Track vehicle maintenance status
+- Historical check records
+- Customizable checklist items
 
 ### User Management
 - Role-based access control
@@ -20,10 +28,11 @@ A comprehensive fleet management solution built with Node.js and PostgreSQL, des
 - Profile management
 - Company information tracking
 
-### Payment Integration
-- Stripe payment processing
-- Subscription management
-- Trial period handling
+### Subscription Management
+- Stripe integration for payments
+- Trial period management
+- Subscription status tracking
+- Automated trial expiry notifications
 
 ## 🛠️ Technology Stack
 
@@ -41,8 +50,7 @@ A comprehensive fleet management solution built with Node.js and PostgreSQL, des
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/panthertaxis-fms.git
-cd panthertaxis-fms
+git clone https://github.com/yourusername/Fleet_Management_System_-FMS-_Backend.git
 ```
 
 2. **Install dependencies**
@@ -61,6 +69,7 @@ EMAIL_USER="your_email"
 EMAIL_PASS="your_email_password"
 EMAIL_PORT=465
 EMAIL_HOST="smtp.gmail.com"
+EMAIL_SECURE="true"
 STRIPE_SECRET_KEY="your_stripe_key"
 ```
 
@@ -83,9 +92,9 @@ npm start
 
 ### Authentication
 ```
-POST /api/auth/register     - Register new user
-POST /api/auth/login        - User login
-POST /api/auth/verify       - Email verification
+POST /api/auth/registration  - Register new user
+POST /api/auth/login         - User login
+POST /api/auth/verify        - Email verification
 ```
 
 ### Documents
